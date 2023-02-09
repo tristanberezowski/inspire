@@ -3,7 +3,9 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home_menu from './components/home_menu';
 
 class App extends Component {
   constructor(props) {
@@ -15,9 +17,13 @@ class App extends Component {
 
   render() {
     return(
-      <div className="App">
+      <div className="App App-body">
         <Navbar/>
-        <h1>Welcome to Inspire</h1>
+          <main>
+            <h1>Welcome to Inspire</h1>
+            <Home_menu/>
+          </main>
+        <Footer/>
       </div>  
     )
   }
