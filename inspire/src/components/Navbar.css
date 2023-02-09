@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.2em;
+    transition: all 0.3s;
+  }
+  
+  nav a:hover {
+    color: #f9c900;
+  }
+  
+  nav span {
+    font-size: 1.5em;
+  }
