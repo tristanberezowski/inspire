@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './home_menu.css';
 
-const Home_menu = () => {
+const Home_menu = ( {onProfileClick} ) => {
+
     return (
+      <div>
+        <h1>Welcome to Inspire</h1>
       <div className="container">
         <div className="logo">
             <a href="page1.html">
-            <img src="maleavatarlogo.png" alt="Male Avatar"/>
+            <img src="maleavatarlogo.png" alt="Male Avatar" onClick={onProfileClick} />
             </a> 
         </div>
         <div className="logo">
@@ -16,9 +19,10 @@ const Home_menu = () => {
         </div>
         <div className="logo">
             <a href="page3.html">
-            <img src="logo3.png" alt="Logo 3"/>
+            <img src="maleavatarlogo.png" alt="Logo 3"/>
             </a>
         </div>
+      </div>
       </div>
     );
 }

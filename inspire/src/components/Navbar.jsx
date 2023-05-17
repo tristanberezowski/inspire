@@ -1,10 +1,15 @@
 import React from 'react';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ viewMode, onProfileClick, onHomeClick }) => {
+
+  const homeClick = ()=>{
+    onHomeClick()
+  }
+
   return (
     <nav>
-      <a href="#home">Home</a>
+      <li onClick={homeClick}>Home</li>
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>

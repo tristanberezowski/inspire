@@ -5,33 +5,37 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home_menu from './components/home_menu';
+import Body from './components/Body';
+export const ViewContext = React.createContext(null);
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentUser: "Tristan"
-    };
+  const [viewMode, setViewMode] = useState('Home');
+
+  onProfileClick = () => {
+    this.setState({ viewMode: 'profile' });
+  };
+
+  onHomeClick = () => {
+    this.setState({ viewMode: 'home' });
+  };
+
+  componentDidMount() {
+    // fetch data
   }
 
   render() {
+    const { viewMode } = this.state;
+
     return(
       <div className="App App-body">
-        <Navbar/>
+        <Navbar viewMode={viewMode} onProfileClick={this.onProfileClick} onHomeClick={this.onHomeClick}/>
           <main>
-            <h1>Welcome to Inspire</h1>
-            <Home_menu/>
+            <Body viewMode={viewMode} onProfileClick={this.onProfileClick} />
           </main>
-        <Footer/>
+        {/*<Footer/>*/}
       </div>  
     )
   }
-
-
-componentDidMount() {
-  //fetch data once rendered
-}
 }
 
 
