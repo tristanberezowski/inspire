@@ -6,10 +6,15 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Body from './components/Body';
-export const ViewContext = React.createContext(null);
+//export const ViewContext = React.createContext(null);
 
 class App extends Component {
-  const [viewMode, setViewMode] = useState('Home');
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewMode: 'home'
+    };
+  }
 
   onProfileClick = () => {
     this.setState({ viewMode: 'profile' });
