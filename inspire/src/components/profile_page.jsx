@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './profile_page.css';
 
-const Profile_page = ( {onProfileClick} ) => {
+const Profile_page = () => {
 
     return (
       <div className="container">

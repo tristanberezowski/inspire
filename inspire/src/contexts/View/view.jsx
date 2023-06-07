@@ -2,20 +2,20 @@ import React, { createContext, useReducer } from 'react';
 import { reducer, initialState } from "./reducer";
 
 // Create the ViewModeContext
-export const ViewContext = React.createContext({
+export const ViewModeContext = React.createContext({
   state: initialState,
   dispatch: () => null
 })
 
 // Create the ViewProvider component
 
-export const ViewProvider = ({ children }) => {
+export const ViewModeProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState)
 
   return (
-    <ViewContext.Provider value={[ state, dispatch ]}>
+    <ViewModeContext.Provider value={{ state, dispatch }}>
     	{ children }
-    </ViewContext.Provider>
+    </ViewModeContext.Provider>
   )
 }
 

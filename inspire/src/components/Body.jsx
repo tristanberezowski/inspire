@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Home_menu from './home_menu';
 import Profile_Page from './profile_page';
 import './Body.css';
-import { ViewProvider } from "../contexts/View/view"
+import { ViewModeContext } from '../contexts/View/view';
 
-const Body = ( { viewMode, onProfileClick } ) => {
+const Body = () => {
+  const {state} = useContext(ViewModeContext);
 
+  const ctx = useContext(ViewModeContext);
+    console.log(ctx);
     return (
-    <ViewProvider>
       <div>
-        <h1>{viewMode}</h1>
-        {viewMode === 'home' && <Home_menu onProfileClick={onProfileClick} />}
-        {viewMode === 'profile' && <Profile_Page onProfileClick={onProfileClick} />}
+        <h1>Keep at it!</h1>
+        {/* <h1>{viewMode}</h1> */}
+        {state.viewMode === 'home' && <Home_menu />}
+        {state.viewMode === 'profile' && <Profile_Page />}
       </div>
-    </ViewProvider>
     );
 }
 

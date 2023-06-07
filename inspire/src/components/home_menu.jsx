@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './home_menu.css';
 
-const Home_menu = ( {onProfileClick} ) => {
+const Home_menu = () => {
 
     return (
       <div>
@@ -9,7 +9,7 @@ const Home_menu = ( {onProfileClick} ) => {
       <div className="container">
         <div className="logo">
             <a href="page1.html">
-            <img src="maleavatarlogo.png" alt="Male Avatar" onClick={onProfileClick} />
+            <img src="maleavatarlogo.png" alt="Male Avatar" />
             </a> 
         </div>
         <div className="logo">
