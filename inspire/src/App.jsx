@@ -1,29 +1,27 @@
 //Main Application Script File
 
 import React, {Component} from 'react';
-import { UserProvider } from "./contexts/User/UserProvider"
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+//import Footer from './components/Footer';
 import Body from './components/Body';
-
-//export const ViewContext = React.createContext(null);
+import { initialState } from './contexts/View/reducer';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      viewMode: 'home'
-    };
+    this.state = initialState;
   }
 
+  useEffect
+
   onProfileClick = () => {
-    this.setState({ viewMode: 'profile' });
+    this.dispatch({ type: "SET_PROFILE" });
   };
 
   onHomeClick = () => {
-    this.setState({ viewMode: 'home' });
+    this.dispatch({ type: "SET_HOME" });
   };
 
   componentDidMount() {
@@ -31,18 +29,15 @@ class App extends Component {
   }
 
   render() {
-    const { viewMode } = this.state;
 
     return(
-      <UserProvider>
-        <div className="App App-body">
-          <Navbar viewMode={viewMode} onProfileClick={this.onProfileClick} onHomeClick={this.onHomeClick}/>
-            <main>
-              <Body viewMode={viewMode} onProfileClick={this.onProfileClick} />
-            </main>
-          {/*<Footer/>*/}
-        </div>  
-      </UserProvider>
+      <div className="App App-body">
+        <Navbar viewMode={viewMode} onProfileClick={this.onProfileClick} onHomeClick={this.onHomeClick}/>
+          <main>
+            <Body viewMode={viewMode} onProfileClick={this.onProfileClick} />
+          </main>
+        {/*<Footer/>*/}
+      </div>  
     )
   }
 }
